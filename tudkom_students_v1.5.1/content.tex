@@ -1,0 +1,77 @@
+\begin{abstract}
+Test
+\end{abstract}
+
+
+
+\chapter{Einleitung}
+\hint{
+	- Thema
+	- Warum relevant? Wie ist es einzuordnen? (Singen macht Spaß -> Problem: Viele haben keine ausgeprägte gehörbildung, Training für Lernende)
+	- Motivation: Viele haben Schwierigkeit Gehörbildung anständig zu lernen (fehlende Programme, schlechte Handhabung, festes Lernkit)
+	- Allg. Fragestellung: "Viele Menschen haben Probleme..., Wollen Lernen..., Müssen im Rahmen ihres Studiums lernen..."
+	- techn. Problemstellung: "Realtime Soundverarbeitung unter UNity mit angemessener Fehlerquote / Intuitives Design der Notenausgabe/Platzierung auf das Notensystem"
+	}
+	
+\chapter{Analyse}
+\hint{
+	- Wie in der Rechereche vorgegangen (Kontakte, Anhaltspunkte, Wissenschaftler, Suchbegriffe, wichtigste Filter) -> Top Referenzen
+	- tech. Knackpunkt: Wie macht die Game Engine etwas? (Sound Verarbeitung etc.)
+	}
+\section{Analyse von Trainingsprogrammen zur Gehörbildung}
+	\subsection{State of the Art}
+		Zu den State of the Art Programmen gehören vorallem online Tools zur Unterstützung bei der Gehörbildung. Zur Recherche nach State of the Art Programmen habe ich zunächst eine einfache Suchanfrage bei Google
+		eingesetzt, um so die gängigsten Programme und Tools zu finden zu diesen Zählen:
+			
+		\begin{description}
+			\item[Gehörbildungswebsite der staatlichen Hochschule für Musik und darstellende Kunst Mannheim]
+				\\Hierbei handelt es sich um ein online Tool, bei welchem aus einer festen Anzahl an aufgenommen Hörbeispielen Übungen generiert werden.
+				Dabei werden die Themen Intervall- und Akkord-Intonation, sowie eine Möglichkeit zur Überprüfung der eigenen Fähigkeiten angeboten.
+		\end{description}
+
+	\section{Analyse von Methoden u. Konzepten zur echtzeit Erkennung von Audio Input vom Anwender mit Unity}
+		\subsection{Recherche}
+			Die Rechereche habe ich zunächst begonnen in der Dokumentation von Unity, dort habe ich nach der Microphone Class gesucht und nach der Verarbeitung von Sound in Unity. \cite{unity_doku_micro} 
+			Dabei ist vorallem der Parameter "Loop" der Methode Microphone.start() interessant. Dieser ist ein bool und gibt an, ob nach der vordefinierten Aufnahmelänge, der Audioclip von Vorne wieder überschrieben und weiter aufgenommen werden soll. \cite{unity_doku_micro_start}
+			Mit diesem Hintergrundwissen, suchte ich weiter nach Erfahrungsberichten Anderer, welche auch eine Echtzeitverarbeitung von Ton mit Unity3D umsetzen wollten.
+
+\chapter{Konzeption eines spielerischen Trainingsprogramms zur Gehörbildung}
+	\hint{
+		- Grundkonzepte (geleitet / einführung in das Thema) und erweiterbare Module (level Basiert)
+		- User Centered Design -> Kontakte: Befragung was wichtig ist (UI, UX)
+		- Basierend auf den Erkenntnissen aus Kapitel 2 -> Aus der Analyse muss klar werden, was wichtig ist
+		}
+\section{Aufbau für so ein Programm}
+\section{Systemsicht: I/O Verarbeitung, Gui wie wird interargiert}
+\section{Evaluationskonzept}
+
+\chapter{Prototypische Realisierung in Unity3D (nicht zu ausführlich schreiben)}
+\hint{
+	- Töne u. Intervalle vorspielen; Erkennung / Einordnung von Tönen
+	- Intervalle ergänzen, selbst singen u. dessen Verarbeitung
+	- Adäquate GUI mit Feedback
+	- Wie wurde das eingebundene realisiert
+	- Warum Unity und kein andere Engine
+	- Typisches Ergebnis ist UML Diagram
+}
+
+\chapter{Evaluation / Validierung der erarbeiteten Methoden und Konzepte}
+\hint{
+	- Mehrstufige Validirung mit Musikverein, Studenten, ...
+	- Unterschiedliche Validierungen vergleichen
+	- Konzept in 3 Stufen
+	-- Vorbereitung, Durchführung, Nachbereitung
+	-> Wie gemacht: Was will ich messen(ERkennungsrate, UX Bewertung)
+}
+
+\chapter{Zusammenfassung}
+\hint{
+	- Zusammenfassung
+	- Ausblick
+	-- Offene Fragen? (Real time Erkennung, ...)
+	--- Umsetzung für Chor? Machine Learning zur Unterscheidung? AI Dirigent?
+}
+
+\chapter{Anhang}
+\hint{Literaturverzeichnis (APA)}
+
