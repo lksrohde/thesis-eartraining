@@ -10,8 +10,6 @@ using Debug = System.Diagnostics.Debug;
 public class UIHandler : MonoBehaviour {
     public Canvas _uiCanvas;
     private Dropdown microphoneDropdownMenu;
-
-    public FrequencyReader _frequencyReader;
     
     // Start is called before the first frame update
     void Start() {
@@ -34,7 +32,6 @@ public class UIHandler : MonoBehaviour {
     }
 
     public void ValueChanged() {
-        _frequencyReader.deviceName = microphoneDropdownMenu.options[microphoneDropdownMenu.value].text;
-        SceneHandler.setInput(_frequencyReader.deviceName);
+        SceneHandler.setInput(microphoneDropdownMenu.options[microphoneDropdownMenu.value].text);
     }
 }

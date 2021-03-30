@@ -9,7 +9,7 @@ public static class SceneHandler
     private static string inputDevice;
     
     public static void changeScene(string currentScene, string loadScene){
-        SceneManager.LoadSceneAsync(loadScene);
+        SceneManager.LoadScene(loadScene);
         SceneManager.UnloadSceneAsync(currentScene);
     }
     
