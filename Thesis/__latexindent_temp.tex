@@ -1,0 +1,8 @@
+ei der Recherche schrittweise vorgegangen und habe zunächst generell nach der Tonverarbeitung in Unity recherchiert. Die erste Quelle für diese Informationen ist in der Regel die Dokumentation, dementsprechend habe ich mir
+die Unity Dokumentation angesehen und nach allem gesucht was "Audio", "Sound" oder "Frequency" erwähnt. Dabei bin ich zunächst auf die allgemeine Informationen Seite von Unity zu Audio gestoßen \cite{unity_doku_audio}, diese leitete mich weiter zu detaillierteren Artikeln zu Audio Verarbeitung in Unity.
+Zu diesen Artikeln gehörten "Audio Source", "Audio Listener", "Audio Mixer", "Audio Effects" und "Reverb Zones", wobei sich die Reverb Zone nach kürzerer
+Recherche als irrelevant herausstellte. Die restlichen Artikel waren hingegen sehr von Nutzen für mein weiteres Vorgehen. Die wichtigste Information habe ich aus der Skripting Dokumentation der Audio Source erhalten. Die Audio Source besitzt
+in der Skripting API eine statische Methode, welche es mir ermöglicht auf die Spektrum Daten des dazugehörigen AudioClips zuzugreifen. Bevor ich mich allerdings
+mit Spektrum Daten befassen konnte, musste ich erst herausfinden, wie ich Audio Daten vom Nutzer einlese, mein nächster Schritt war also nach einer Mikrofon Klasse in der Unity Dokumentation zu suchen.
+In der Unity Dokumentation bin ich dann auf die Microphone Klasse gestoßen, wobei aufgefallen ist, dass das Mikrofon nur einen AudioClip aufnehmen kann und man erst auf diesen zugreifen kann, wenn die Aufnahme 
+fertig ist. Das hat mich vor ein großes Problem gestellt, denn mit dieser Eigenschaft ist es nicht so einfach möglich eine Echtzeitverarbeitung der Daten vorzunehmen. 
