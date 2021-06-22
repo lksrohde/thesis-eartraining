@@ -1,54 +1,160 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FrequencyHandler : MonoBehaviour {
-    public FrequencyReader _frequencyReader;
-    public TMP_Text _testFrequencyOutput;
-    private float[] spectrum = new float[8192];
-    private double hz;
-    void Start()
-    {
-        print(spectrum.Length);             
-    }
-
+    private int _cutoffArray;
+    private float[] _cutSpectrum;
+    private float _hz;
+    private FrequencyUtil _freqUtil;
     
-    void Update() {
-        hz = computeHertz();
-        _testFrequencyOutput.text = hz.ToString() + " Hz";
+    private float _sampleCoeficient;
+
+    private float[] _spectrum = new float[8192];
+    public FrequencyReader frequencyReader;
+    public int maxReadableFrequency = 1100;
+
+    private float noiseFilter;
+    private float overtoneThresh;
+
+
+    void Start() {
+        Debug.Log(_spectrum.Length);
+        Debug.Log(frequencyReader.SampleRate);
+        
+        noiseFilter = SceneHandler.NoiseFilter;
+        overtoneThresh = SceneHandler.ToneThresh;
+        
+        // 44100 / 2 / 8192 = 2.690..
+        // Abtasttheorem führt zu SampleRate / 2
+        // Sopran singt bis zu c6 ca. 1100hz -> 400 samples reichen bei einem sampleCoefficient von ca. 2.69
+        // 400 * 2.69 = 1076hz
+
+        _sampleCoeficient = (float) frequencyReader.SampleRate / 2 / _spectrum.Length;
+        _cutoffArray = (int) (maxReadableFrequency / _sampleCoeficient) + 1;
+
+        _cutSpectrum = new float[_cutoffArray];
+
+        Debug.Log("SampleCoefficient: " + _sampleCoeficient);
+
+        _freqUtil = new FrequencyUtil();
     }
 
-    public double getHz() {
-        return hz;
+
+    void FixedUpdate() {
+        _hz = ComputeFrequency();
     }
 
-    double computeHertz() {
-        _frequencyReader.playback.GetSpectrumData(spectrum, 0, FFTWindow.Rectangular);
+    public float GetHz() {
+        return _hz;
+    }
 
-        float max = spectrum.Max();
-        print(max);
-        for (int i = 1; i < spectrum.Length - 1; i++)
-        {
-            // Find Maximum in spectrumData
-            if (Math.Abs(spectrum[i] - max) < 0.0001) {
-                print("Max i: " + i);
-                
-                // 440 / 162 = 2.69938650307
-                // 162 durch Testen ermittelt
-                
-                return 2.69938650307 * i;
+    public string GetNote() {
+        return _freqUtil.GetNoteNameFromFreq(_hz);
+    }
+
+    float ComputeFrequency() {
+        frequencyReader.playback.GetSpectrumData(_spectrum, 0, FFTWindow.BlackmanHarris);
+
+        Array.Copy(_spectrum, 0, _cutSpectrum, 0, _cutoffArray);
+
+        int absMaxIndex = 0;
+        float max = _cutSpectrum.Max();
+        float avg = _cutSpectrum.Average();
+        _cutSpectrum[0] = 0;
+
+        for (int i = 1; i < _cutSpectrum.Length - 1; i++) {
+            // Noise Filter
+            if (_cutSpectrum[i] < avg * noiseFilter) {
+                _cutSpectrum[i] = 0;
+                continue;
             }
-            /*
-            Debug.DrawLine(new Vector3(i - 1, spectrum[i] + 10, 0), new Vector3(i, spectrum[i + 1] + 10, 0), Color.red);
-            Debug.DrawLine(new Vector3(i - 1, Mathf.Log(spectrum[i - 1]) + 10, 2), new Vector3(i, Mathf.Log(spectrum[i]) + 10, 2), Color.cyan);
-            Debug.DrawLine(new Vector3(Mathf.Log(i - 1), spectrum[i - 1] - 10, 1), new Vector3(Mathf.Log(i), spectrum[i] - 10, 1), Color.green);
-            Debug.DrawLine(new Vector3(Mathf.Log(i - 1), Mathf.Log(spectrum[i - 1]), 3), new Vector3(Mathf.Log(i), Mathf.Log(spectrum[i]), 3), Color.blue);
-            */ 
+
+            // Find Maximum in spectrumData
+            // -> Der stärkste Oberton häufig auch der Grundton
+            if (Math.Abs(_cutSpectrum[i] - max) < 0.00001) {
+                absMaxIndex = i;
+            }
+            
         }
 
-        return 0;
+        int bestIndex = GetFundamentalFreq(absMaxIndex);
+
+        Interpolation inter = new Interpolation(_cutSpectrum);
+        float interpolatedIndex = inter.GetMaxIndexInterpolated(bestIndex);
+
+        if (Math.Abs(interpolatedIndex) > 0.000001) {
+            return interpolatedIndex * _sampleCoeficient;
+        }
+
+        return bestIndex * _sampleCoeficient;
+    }
+
+
+    int HandleOvertones(int absMaxIndex) {
+        int bestIndex = absMaxIndex;
+
+        int newReturnVal = GetFundamentalFreq(absMaxIndex);
+        if (newReturnVal != 0 && _cutSpectrum[newReturnVal] >= _cutSpectrum[absMaxIndex] * overtoneThresh) {
+            bestIndex = newReturnVal;
+        }
+
+        return bestIndex;
+    }
+
+    private int GetFundamentalFreq(int absMaxIndex) {
+        float overtoneMax = 0;
+        int overtoneMaxIndex = absMaxIndex;
+
+        for (int i = absMaxIndex; i > 0; i--) {
+            float currentVal = _cutSpectrum[i];
+
+            if (Math.Abs(currentVal) < 0.00001) {
+                overtoneMax = 0;
+            }
+
+            if (currentVal > _cutSpectrum[absMaxIndex] * overtoneThresh) {
+                if (overtoneMax < currentVal) {
+                    overtoneMax = currentVal;
+                    overtoneMaxIndex = i;
+                }
+            }
+        }
+
+        return overtoneMaxIndex;
+    }
+
+    List<Tuple<int, int>> FindAllOvertones(int absMaxIndex) {
+        List<Tuple<int, int>> startEndIndize = new List<Tuple<int, int>>();
+        for (int i = absMaxIndex; i > 0;) {
+            float currentVal = _cutSpectrum[i];
+            while (Math.Abs(currentVal) < 0.00001) {
+                currentVal = _cutSpectrum[i];
+                i--;
+            }
+
+            int start = i;
+            while (currentVal > 0.00001) {
+                currentVal = _cutSpectrum[i];
+                i--;
+            }
+
+            startEndIndize.Append(new Tuple<int, int>(i + 1, start));
+        }
+
+        return startEndIndize;
+    }
+    
+    public float NoiseFilter {
+        get => noiseFilter;
+        set => noiseFilter = value;
+    }
+
+    public float OvertoneThresh {
+        get => overtoneThresh;
+        set => overtoneThresh = value;
     }
 }

@@ -19,7 +19,7 @@
 
 ### Idealfall Software
 - Kleine Einführung in das Thema, Quasi geführter Lernprozess
-- Aber auch zufalls generierte Übungen zu verwschiedenen Disziplinen der Gehörbildung vorallem mit Fokus auf Gesang bzw. Mikrofon Input (Rythmus Diktat)
+- Aber auch zufalls generierte Übungen zu verschiedenen Disziplinen der Gehörbildung vorallem mit Fokus auf Gesang bzw. Mikrofon Input (Rythmus Diktat)
 
 ## Wann ist die Arbeit gut?
 - IMREO

@@ -1,0 +1,74 @@
+{
+  "exercisesIntervall": [
+    {
+      "text": "Beginnen wir mit der Prime. Die Prime ist das Intervall zwischen zwei identischen Tönen. Gib nun die Prime zu dem linken Ton an, indem Du rechts im Notensystem auf die Note klickst oder ihn singst.",
+      "grundton": "random",
+      "intervall": "PRIME"
+    },
+    {
+      "text": "Bilde nun eine kleine Sekunde, wie in dem Lied 'Schneeflöckchen, Weißröckchen..'",
+      "grundton": "random",
+      "intervall": "KLEINE_SEKUNDE"
+    },
+    {
+      "text": "Bilde nun eine große Sekunde des gegebenen Tons. Ein bekanntes Lied wäre 'Alle meine Entchen'",
+      "grundton": "random",
+      "intervall": "GROßE_SEKUNDE"
+    },
+    {
+      "text": "Bilde jetzt eine kleine Terz. Eine bekannte kleine Terz ist 'Macht hoch die Tür..'",
+      "grundton": "random",
+      "intervall": "KLEINE_TERZ"
+    },
+    {
+      "text": "Bilde jetzt eine große Terz. Eine bekannte große Terz ist 'Kumbaya my Lord...'",
+      "grundton": "random",
+      "intervall": "GROßE_TERZ"
+    },
+    {
+      "text": "Das nächste Intervall ist die Quarte, welche fünf Halbtonschritte umfasst. Bilde jetzt eine Quarte. Eine bekannte Quarte ist das Martinshorn (Ta-tü).",
+      "grundton": "random",
+      "intervall": "QUARTE"
+    },
+    {
+      "text": "Der Tritonus bildet den nächsten Schritt in der Reihe der Intervalle, dieser umfasst sechs Halbtonschritte. Bilde einen Tritonus. Der Anfang der Simpsons ist ein bekannter Tritonus.",
+      "grundton": "random",
+      "intervall": "TRITONUS"
+    },
+    {
+      "text": "Das nächst größere Intervall ist die Quinte, die sieben Halbtonschritte umfasst, wie beispielsweise in 'Morgen kommt der Weihnachtsmann..'",
+      "grundton": "random",
+      "intervall": "QUINTE"
+    },
+    {
+      "text": "Bilde eine kleine Sexte. Ein bekanntes Lied wäre 'When Israel was in Egypt..'",
+      "grundton": "random",
+      "intervall": "KLEINE_SEXTE"
+    },
+    {
+      "text": "Bilde eine große Sexte. Wie beispielsweise 'Ein Prosit'",
+      "grundton": "random",
+      "intervall": "GROßE_SEXTE"
+    },
+    {
+      "text": "Bilde eine kleine Septime. Wie etwa 'Theres a place for us' aus West Side Story",
+      "grundton": "random",
+      "intervall": "KLEINE_SEPTIME"
+    },
+    {
+      "text": "Bilde eine große Septime. Wie beispielsweise 'Take on me'",
+      "grundton": "random",
+      "intervall": "GROßE_SEPTIME"
+    },
+    {
+      "text": "Zuletzt fehlt noch die Oktave mit zwöf Halbtonschritten. Wie etwa 'Somewhere over the Rainbow' oder 'Singing in the Rain'",
+      "grundton": "random",
+      "intervall": "OKTAVE"
+    },
+    {
+      "text": "Ende der Moduldemo, vielen Dank fürs Testen! Zurück zum Hauptmenü gehts über das Zahnrad.",
+      "grundton": "random",
+      "intervall": "skip"
+    }
+  ]
+}

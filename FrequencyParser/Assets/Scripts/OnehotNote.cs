@@ -1,34 +1,55 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using DataStructures;
 using UnityEngine;
 
 public class OnehotNote : MonoBehaviour {
-    private SpriteRenderer renderer;
-    private Sprite notenKopf;
+    private SpriteRenderer _spriteRenderer;
+    private Sprite _notenKopf;
     private NoteSystemHandler _systemHandler;
     private BoxCollider _collider;
     private bool _stayOn;
-    private Vector2 standSize;
-    private Vector2 collSize;
-    private bool _isSharp;
-    private bool _isFlat;
+    private GleichstufigFreq _toneVal;
+    private GleichstufigFreq _halfToneLowerVal;
+    private GleichstufigFreq _halfToneUpperVal;
+    private Vector2 _standSize;
+    private Vector2 _collSize;
+    public GameObject[] balken;
+    private GameUI _uiHandler;
+    
     private void Awake() {
-        renderer = gameObject.AddComponent<SpriteRenderer>();
-        renderer.rendererPriority = 1;
+        _uiHandler = FindObjectOfType<GameUI>();
         
-        renderer.drawMode = SpriteDrawMode.Sliced;
+        _spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        /*_spriteRenderer.rendererPriority = 1;
+        
+        _spriteRenderer.drawMode = SpriteDrawMode.Sliced;
+        */
         _systemHandler = GetComponentInParent<NoteSystemHandler>();
         _collider = GetComponent<BoxCollider>();
-
-        collSize = _collider.size;
-        standSize = new Vector2(collSize.y * 2.5f, collSize.y * 2);    
         
-        notenKopf = _systemHandler.notenKopf;
+        _collSize = _collider.size;
+        _standSize = new Vector2(_collSize.y * 2.5f, _collSize.y * 2);
+
+        _notenKopf = _systemHandler.notenKopf;
+        RenderBalken(false);
     }
 
     private void OnMouseEnter() {
         if (_stayOn || StayOff || !EnableClickIn) return;
+        if (_systemHandler.PickedNoteIsHalftone) {
+            if (!_uiHandler.AscDesc) {
+                AddSharp();
+            }
+            else {
+                AddFlat();
+            }
+        } 
+        else {
+            ResetSprite();
+        }
+
         RenderNote(true);
     }
 
@@ -42,36 +63,67 @@ public class OnehotNote : MonoBehaviour {
         _stayOn = !_stayOn;
         _systemHandler.StayOn(this, _stayOn);
     }
+
     public void RenderNote(bool on) {
         if (on) {
             IsVisible = true;
-            renderer.sprite = notenKopf;
-            renderer.size = standSize;
-            renderer.rendererPriority = 1;
+            _spriteRenderer.sprite = _notenKopf;
+            _spriteRenderer.size = _standSize;
+            RenderBalken(true);
+
+            //_spriteRenderer.rendererPriority = 1;
             gameObject.layer = 1;
         }
         else {
             IsVisible = false;
-            renderer.sprite = null;
-            notenKopf = _systemHandler.notenKopf;
-            standSize = new Vector2(collSize.y * 2.5f, collSize.y * 2);    
-
+            _spriteRenderer.sprite = null;
+            _notenKopf = _systemHandler.notenKopf;
+            RenderBalken(false);
+            _standSize = new Vector2(_collSize.y * 2.5f, _collSize.y * 2);
         }
     }
 
+    private void RenderBalken(bool render) {
+        if (balken.Length != 0) {
+            foreach (var balk in balken) {
+                balk.SetActive(render); 
+            }
+        }
+    }
+
+    public void ResetSprite() {
+        _notenKopf = _systemHandler.notenKopf;
+        _standSize = new Vector2(_collSize.y * 2.5f, _collSize.y * 2);
+    }
+
     public void AddSharp() {
-        notenKopf = _systemHandler.notenKopfSharp;
-        standSize = new Vector2(collSize.y * 3.5f, collSize.y * 2);
-        
+        _notenKopf = _systemHandler.notenKopfSharp;
+        _standSize = new Vector2(_collSize.y * 3.5f, _collSize.y * 2);
     }
-    
+
     public void AddFlat() {
-        notenKopf = _systemHandler.notenKopfFlat;
-        standSize = new Vector2(collSize.y * 3.5f, collSize.y * 2);
+        _notenKopf = _systemHandler.notenKopfFlat;
+        _standSize = new Vector2(_collSize.y * 3.5f, _collSize.y * 2);
     }
+
     public bool StayOff { get; set; }
 
     public bool EnableClickIn { get; set; }
 
     public bool IsVisible { get; private set; }
+
+    public GleichstufigFreq ToneVal {
+        get => _toneVal;
+        set => _toneVal = value;
+    }
+
+    public GleichstufigFreq HalfToneLowerVal {
+        get => _halfToneLowerVal;
+        set => _halfToneLowerVal = value;
+    }
+
+    public GleichstufigFreq HalfToneUpperVal {
+        get => _halfToneUpperVal;
+        set => _halfToneUpperVal = value;
+    }
 }

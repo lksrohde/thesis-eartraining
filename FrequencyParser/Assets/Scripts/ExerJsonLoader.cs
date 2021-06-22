@@ -2,11 +2,16 @@ using UnityEngine;
 
 namespace DataStructures {
     
-    public class JsonLoader {
+    public class ExerJsonLoader {
         private TextAsset jsonFile;
         
-        public JsonLoader(TextAsset file) {
+        public ExerJsonLoader(TextAsset file) {
             jsonFile = file;
         }
+
+        public Exercises LoadExercises() {
+            return JsonUtility.FromJson<Exercises>(jsonFile.text);
+        }
+
     }
 }

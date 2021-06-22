@@ -4,46 +4,51 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class FrequencyReader : MonoBehaviour
-{
-    AudioClip microphoneInput;
+public class FrequencyReader : MonoBehaviour {
+    private AudioClip _microphoneInput;
     public AudioSource playback;
     public AudioClip micClip;
-    
     public string deviceName;
-    
+
+    private int _minFreq;
+    private int _maxFreq;
+
+    private int _sampleRate;
+
+
     void Start() {
-        
         if (deviceName == "") {
-            deviceName = SceneHandler.getInput();
+            deviceName = SceneHandler.InputDevice;
             if (deviceName == null) {
                 deviceName = Microphone.devices[0];
             }
         }
-        
-        print(deviceName);
-        
+
+        Microphone.GetDeviceCaps(deviceName, out _minFreq, out _maxFreq);
+        Debug.Log("MinFreq: " + _minFreq + " MaxFreq: " + _maxFreq);
+        Debug.Log(deviceName);
+
         //Start Microphone Recording
-        micClip = Microphone.Start(deviceName, true, 1, 44100);
+        // Loop = true damit kontinuierlich aufgenommen wird
+        _sampleRate = 44100;
+
+        micClip = Microphone.Start(deviceName, true, 1, _sampleRate);
+
         playback.clip = micClip;
+
+        // loop =  true, damit der clip nicht endet
         playback.loop = true;
-        
-        
-        //Warte bis 10ms in samples vergangen sind -> 44100 / 1000 * 10 = 440
-        //Umso die Latenz des Microphones auf 10ms zu setzen
-        //TODO WIE GENAU FUNKTIONIERT DAS
-        while (Microphone.GetPosition(deviceName) < 440) {
-            print("Polling Samples");
+
+        // Warte auf Samples -> wenn Samples ankommen startet das Audio
+        // so erziele ich die niedrigst mögliche Latenz.
+        while (Microphone.GetPosition(deviceName) < 1) {
+            //print("Waiting for Mic");
         }
 
+
         playback.Play();
-        
     }
+    
+    public int SampleRate => _sampleRate;
 
-    void Update() {
-    }
-
-    private void FixedUpdate() {
-        //print(Microphone.GetPosition(deviceName));
-    }
 }

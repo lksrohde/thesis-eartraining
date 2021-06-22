@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using DataStructures;
 using UnityEngine;
@@ -11,11 +12,40 @@ public class Options : MonoBehaviour {
     public Slider noiseFilter;
     public Slider toneThresh;
 
+    private FrequencyHandler _frequencyHandler;
     private VocalRanges ranges = new VocalRanges();
 
     void Start() {
+        _frequencyHandler = FindObjectOfType<FrequencyHandler>();
         CreateMicDropdown();
         CreateRangeDropdown();
+        
+        
+        if (SceneHandler.NoiseFilter == 0) {
+            noiseFilter.value = 0.05f;
+        }
+        else {
+            noiseFilter.value = SceneHandler.NoiseFilter;
+        }
+        
+        if (SceneHandler.ToneThresh == 0) {
+            toneThresh.value = 0.1f;
+        }
+        else {
+            toneThresh.value = SceneHandler.ToneThresh;
+        }
+
+    }
+
+    public void SetSliders() {
+        var noiseFilterValue = noiseFilter.value;
+        var toneThreshValue = toneThresh.value;
+        
+        SceneHandler.NoiseFilter = noiseFilterValue;
+        SceneHandler.ToneThresh = toneThreshValue;
+        
+        _frequencyHandler.NoiseFilter = noiseFilterValue;
+        _frequencyHandler.OvertoneThresh = toneThreshValue;
     }
 
     private void CreateMicDropdown() {
@@ -36,18 +66,25 @@ public class Options : MonoBehaviour {
 
 
     public void BackToMenu() {
-        SceneHandler.SetNoiseFilter(noiseFilter.value);
-        SceneHandler.SetToneThresh(toneThresh.value);
+        SceneHandler.NoiseFilter = noiseFilter.value;
+        SceneHandler.ToneThresh = toneThresh.value;
 
-        SceneHandler.ChangeScene("Options", "MainMenu");
+        SceneHandler.ChangeScene("MainMenu");
     }
 
     public void MicValue() {
-        SceneHandler.SetInput(microphoneDropdownMenu.options[microphoneDropdownMenu.value].text);
+        SceneHandler.InputDevice = microphoneDropdownMenu.options[microphoneDropdownMenu.value].text;
     }
 
     public void RangeValue() {
         SceneHandler.SetRange(ranges.ToArray()[rangeDropdownMenu.value],
             ranges.ToStringArray()[rangeDropdownMenu.value]);
     }
+
+    public void RangeValueOnExit() {
+        if (SceneHandler.GetRange() == null) {
+            RangeValue();
+        }
+    }
+    
 }

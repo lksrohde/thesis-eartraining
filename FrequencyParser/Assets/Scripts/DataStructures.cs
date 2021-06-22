@@ -1,7 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
 using static DataStructures.GleichstufigFreq;
 
 namespace DataStructures {
@@ -99,25 +96,25 @@ namespace DataStructures {
         Ais2_B2 = 2913,
         A2 = 2750
     }
-
+    
     public class VocalRanges {
         public readonly Tuple<GleichstufigFreq, GleichstufigFreq> Sopran =
-            new Tuple<GleichstufigFreq, GleichstufigFreq>(c1, c3);
+            new Tuple<GleichstufigFreq, GleichstufigFreq>(e1, e2);
 
         public readonly  Tuple<GleichstufigFreq, GleichstufigFreq> MezzoSopran =
-            new Tuple<GleichstufigFreq, GleichstufigFreq>(a, a2);
+            new Tuple<GleichstufigFreq, GleichstufigFreq>(a, e2);
 
         public readonly  Tuple<GleichstufigFreq, GleichstufigFreq> Alt =
-            new Tuple<GleichstufigFreq, GleichstufigFreq>(f, e2);
+            new Tuple<GleichstufigFreq, GleichstufigFreq>(a, c1);
 
         public readonly  Tuple<GleichstufigFreq, GleichstufigFreq> Tenor =
-            new Tuple<GleichstufigFreq, GleichstufigFreq>(H, a1);
+            new Tuple<GleichstufigFreq, GleichstufigFreq>(H, e1);
 
         public readonly  Tuple<GleichstufigFreq, GleichstufigFreq> Bariton =
-            new Tuple<GleichstufigFreq, GleichstufigFreq>(G, f1);
+            new Tuple<GleichstufigFreq, GleichstufigFreq>(A, d1);
 
         public readonly  Tuple<GleichstufigFreq, GleichstufigFreq> Bass =
-            new Tuple<GleichstufigFreq, GleichstufigFreq>(E, e1);
+            new Tuple<GleichstufigFreq, GleichstufigFreq>(G, c1);
 
         public Tuple<GleichstufigFreq, GleichstufigFreq>[] ToArray() {
             return new []{Sopran, MezzoSopran, Alt, Tenor, Bariton, Bass};
@@ -169,5 +166,16 @@ namespace DataStructures {
             
             return rangeArr;
         }
+    }
+    [Serializable]
+    public class Exercises {
+        public Exercise[] exercisesIntervall;
+    }
+
+    [Serializable]
+    public class Exercise {
+        public string text;
+        public string grundton;
+        public string intervall;
     }
 }

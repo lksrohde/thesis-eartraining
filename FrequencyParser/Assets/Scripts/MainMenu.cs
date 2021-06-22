@@ -1,35 +1,28 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using TMPro;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
-using Debug = System.Diagnostics.Debug;
 
 public class MainMenu : MonoBehaviour {
-    public Canvas _uiCanvas;
-
-    public Text TonlageOut;
-    // Start is called before the first frame update
+    public Text tonlageOut;
     void Start() {
-        TonlageOut.text = "Tonlage: " + SceneHandler.GetRangeName();
-    }
-
-    // Update is called once per frame
-    void Update() {
-        
+        tonlageOut.text = "Tonlage: " + SceneHandler.GetRangeName();
+        if (SceneHandler.NoiseFilter == 0 && SceneHandler.ToneThresh == 0) {
+            SceneHandler.NoiseFilter = 0.05f;
+            SceneHandler.ToneThresh = 0.1f;    
+        }
     }
 
     public void StartInfinite() {
-        SceneHandler.ChangeScene("MainMenu", "InfiniteTest");
+        SceneHandler.ChangeScene("InfiniteTest");
     }
     
     public void StartOptions() {
-        SceneHandler.ChangeScene("MainMenu", "Options");
+        SceneHandler.ChangeScene("Options");
     }
-    
+
+    public void StartModule() {
+        SceneHandler.ChangeScene("IntervallModule");
+    }
+
     public void EndGame() {
         Application.Quit();
     }

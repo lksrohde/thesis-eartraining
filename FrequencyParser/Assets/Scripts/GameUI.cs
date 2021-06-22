@@ -1,38 +1,74 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using DataStructures;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameUI : MonoBehaviour {
-    private bool _toggledGrundton;
-    private bool _toggledSinging;
-    private bool _toggledFlat;
-
-    private Tuple<GleichstufigFreq, GleichstufigFreq> _range;
-    private VocalRanges ranges = new VocalRanges();
-    
-    public NoteSystemHandler noteSystemHandler;
+public class GameUI : BaseGameUI {
+    public Canvas optionScreen;
     public Dropdown customGrundtonDropdown;
     public Toggle customGrundtonToggle;
     public Toggle enableSinging;
-    public TMP_Text exerOut;
-    public Canvas optionScreen;
     public Toggle makeItFlat;
+    public TMP_Text exerOut;
+    public Dropdown ascDescDropdown;
+    public TextMeshProUGUI feedbackText;
+
     void Start() {
         _range = SceneHandler.GetRange();
+        _inputHandler = FindObjectOfType<InputHandler>();
+        _noteSystemHandler = FindObjectOfType<NoteSystemHandler>();
+        _frequencyUtil = new FrequencyUtil(SceneHandler.GetRange());
         
         if (_range == null) {
             _range = ranges.Bariton;
         }
-        
+
+        _rangeVals = ranges.GetRangeValues(_range);
         ToggleSinging();
+        AscDescVal();
         ToggleGrundton();
+        ToggleFlat();
         ShowOptions();
     }
-    
+
+    protected override void Update() {
+        if (_currentGrundton != 0) {
+            _noteSystemHandler.SetEngineTone(_currentGrundton);
+        }
+        feedbackText.text = _feedbackField;
+        if (!isModule) {
+            if (_toggledSinging) {
+                _noteSystemHandler.SetPlayerTone(_frequencyUtil.GetNearestNoteFromFreq(_inputHandler.CurrentFreq));
+                
+                exerOut.text = "Singe folgendes Intervall: " + NormaliseEnumName(
+                                   ((ReineIntervalleCent) _currentIntervall).ToString());
+            }
+            else {
+                exerOut.text = "Vervollständige folgendes Intervall: " + NormaliseEnumName(
+                                   ((ReineIntervalleCent) _currentIntervall).ToString());
+            }
+        }
+        else {
+            if (_toggledSinging) {
+                _noteSystemHandler.SetPlayerTone(_frequencyUtil.GetNearestNoteFromFreq(_inputHandler.CurrentFreq));
+                exerOut.text = _customOutput;
+            }
+            else {
+                exerOut.text = _customOutput;
+            }
+        }
+    }
+
+    public int GetStaticGrundton() {
+        return _rangeVals[customGrundtonDropdown.value];
+    }
+
+    public void AscDescVal() {
+        _ascDesc = ascDescDropdown.value.ToString().Equals("0");
+    }
+
     public void ShowOptions() {
         var show = optionScreen.gameObject.activeSelf;
         optionScreen.gameObject.SetActive(!show);
@@ -40,24 +76,25 @@ public class GameUI : MonoBehaviour {
     
     public void ToggleFlat() {
         _toggledFlat = makeItFlat.isOn;
+        _noteSystemHandler.PickedNoteIsHalftone = _toggledFlat;
     }
     
     public void ToggleGrundton() {
         _toggledGrundton = customGrundtonToggle.isOn;
         if (!_toggledGrundton) {
             customGrundtonDropdown.gameObject.SetActive(false);
-            makeItFlat.gameObject.SetActive(false);
         }
         else {
             customGrundtonDropdown.gameObject.SetActive(true);
-            makeItFlat.gameObject.SetActive(true);
             CreateGrundtonDropdown();
         }
     }
 
     public void ToggleSinging() {
         _toggledSinging = enableSinging.isOn;
-        noteSystemHandler.SetMouseControl(!_toggledSinging);
+        _noteSystemHandler.SetMouseControl(!_toggledSinging);
+        makeItFlat.gameObject.SetActive(!_toggledSinging);
+
     }
 
     private void CreateGrundtonDropdown() {
@@ -70,24 +107,11 @@ public class GameUI : MonoBehaviour {
 
         customGrundtonDropdown.AddOptions(tones);
     }
-
-    public void UpdateOutput(int _currentExer, int currentGrundton, int currentIntervall) {
-        noteSystemHandler.SetEngineTone(currentGrundton);
-        exerOut.text = "Singe folgendes Intervall: " + (ReineIntervalleCent) currentIntervall;
-    }
-
-    public void GoToMainMenu() {
-        SceneHandler.ChangeScene("InfiniteTest", "MainMenu");
-    }
-
     
-
-    public int GetStaticGrundton() {
-        return ranges.GetRangeValues(_range)[customGrundtonDropdown.value];
+    
+    public void GoToTheory() {
+        SceneHandler.ChangeScene("TheoryBook");
     }
     
-    public bool ToggledGrundton => _toggledGrundton;
-    public bool ToggledSinging => _toggledSinging;
-    public bool ToggledFlat => _toggledFlat;
     
 }
