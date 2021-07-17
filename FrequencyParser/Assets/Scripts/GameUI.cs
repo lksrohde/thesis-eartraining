@@ -43,11 +43,11 @@ public class GameUI : BaseGameUI {
                 _noteSystemHandler.SetPlayerTone(_frequencyUtil.GetNearestNoteFromFreq(_inputHandler.CurrentFreq));
                 
                 exerOut.text = "Singe folgendes Intervall: " + NormaliseEnumName(
-                                   ((ReineIntervalleCent) _currentIntervall).ToString());
+                                   ((GleichstufigeIntervalleCent) _currentIntervall).ToString());
             }
             else {
                 exerOut.text = "Vervollständige folgendes Intervall: " + NormaliseEnumName(
-                                   ((ReineIntervalleCent) _currentIntervall).ToString());
+                                   ((GleichstufigeIntervalleCent) _currentIntervall).ToString());
             }
         }
         else {

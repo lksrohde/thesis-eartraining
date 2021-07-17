@@ -4,7 +4,7 @@ using DataStructures;
 public class FrequencyUtil {
     private Random _random = new Random();
     private Tuple<GleichstufigFreq, GleichstufigFreq> _range;
-    private int[] intervallArr = (int[]) Enum.GetValues(typeof(ReineIntervalleCent));
+    private int[] intervallArr = (int[]) Enum.GetValues(typeof(GleichstufigeIntervalleCent));
     private int[] noteArr = (int[]) Enum.GetValues(typeof(GleichstufigFreq));
     public FrequencyUtil(Tuple<GleichstufigFreq, GleichstufigFreq> range) {
         _range = range;

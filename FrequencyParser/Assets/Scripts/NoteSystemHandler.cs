@@ -45,7 +45,7 @@ public class NoteSystemHandler : MonoBehaviour {
             script.HalfToneLowerVal = GetIndexBelow(freqs, script.ToneVal);
             script.HalfToneUpperVal = (GleichstufigFreq) _freqUtil.GetNearestNoteFromFreq(
                 _freqUtil.GenExerIntervall(_freqUtil.GetNormalized((int) script.ToneVal),
-                    (float) ReineIntervalleCent.KLEINE_SEKUNDE,
+                    (float) GleichstufigeIntervalleCent.KLEINE_SEKUNDE,
                     true));
 
             _noteAreaScriptsPlayer.Add(script);
@@ -59,7 +59,7 @@ public class NoteSystemHandler : MonoBehaviour {
             script.HalfToneLowerVal = GetIndexBelow(freqs, script.ToneVal);
             script.HalfToneUpperVal = (GleichstufigFreq) _freqUtil.GetNearestNoteFromFreq(
                 _freqUtil.GenExerIntervall(_freqUtil.GetNormalized((int) script.ToneVal),
-                    (float) ReineIntervalleCent.KLEINE_SEKUNDE,
+                    (float) GleichstufigeIntervalleCent.KLEINE_SEKUNDE,
                     true));
 
             _noteAreaScriptsEngine.Add(script);
@@ -96,7 +96,7 @@ public class NoteSystemHandler : MonoBehaviour {
     public void SetEngineTone(int noteVal) {
         if (_lastEngineNote != _nullNote) _lastEngineNote.RenderNote(false);
         var noteValGanz = _freqUtil.CheckForHalbton(noteVal);
-        var note = GetActiveEngineNoteViaValue(noteValGanz);
+        var note = GetEngineNoteViaValue(noteValGanz);
 
         if (noteVal != noteValGanz) {
             note.AddFlat();
@@ -111,7 +111,7 @@ public class NoteSystemHandler : MonoBehaviour {
 
     public void SetPlayerTone(int noteVal) {
         var noteValGanz = _freqUtil.CheckForHalbton(noteVal);
-        var note = GetActivePlayerNoteViaValue(noteValGanz);
+        var note = GetPlayerNoteViaValue(noteValGanz);
 
         if (note == _nullNote) {
             return;
@@ -145,10 +145,10 @@ public class NoteSystemHandler : MonoBehaviour {
 
     private OnehotNote GetGanztonNachUnten(int note) {
         var tempNote = _freqUtil.GetNearestNoteFromFreq(_freqUtil.GenExerIntervall(_freqUtil.GetFrequency(note),
-            (float) ReineIntervalleCent.GROßE_SEKUNDE, false));
-        OnehotNote newNote = GetActivePlayerNoteViaValue(tempNote);
+            (float) GleichstufigeIntervalleCent.GROßE_SEKUNDE, false));
+        OnehotNote newNote = GetPlayerNoteViaValue(tempNote);
         if (newNote == _nullNote) {
-            return GetActivePlayerNoteViaValue((int) GleichstufigFreq.E);
+            return GetPlayerNoteViaValue((int) GleichstufigFreq.E);
         }
 
         return newNote;
@@ -173,15 +173,7 @@ public class NoteSystemHandler : MonoBehaviour {
         return (int) note.ToneVal;
     }
 
-    private OnehotNote GetActivePlayerNoteViaMouse() {
-        foreach (var note in _noteAreaScriptsPlayer.Where(note => note.IsVisible)) {
-            return note;
-        }
-
-        return _nullNote;
-    }
-
-    private OnehotNote GetActivePlayerNoteViaValue(int noteVal) {
+    private OnehotNote GetPlayerNoteViaValue(int noteVal) {
         var noteName = Enum.GetName(typeof(GleichstufigFreq), noteVal);
 
         foreach (var note in _noteAreaScriptsPlayer.Where(note => note.gameObject.name == noteName)) {
@@ -191,7 +183,7 @@ public class NoteSystemHandler : MonoBehaviour {
         return _nullNote;
     }
 
-    private OnehotNote GetActiveEngineNoteViaValue(int noteVal) {
+    private OnehotNote GetEngineNoteViaValue(int noteVal) {
         var noteName = Enum.GetName(typeof(GleichstufigFreq), noteVal);
 
         foreach (var note in _noteAreaScriptsEngine.Where(note => note.gameObject.name == noteName)) {

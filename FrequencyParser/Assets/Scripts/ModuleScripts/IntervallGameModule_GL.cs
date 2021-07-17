@@ -23,7 +23,7 @@ public class IntervallGameModule_GL : BaseGameLogic {
         
         // Set Intervall
         if (!currentExercise.intervall.Equals("skip")) {
-            intervall = (int) Enum.Parse(typeof(ReineIntervalleCent), currentExercise.intervall);    
+            intervall = (int) Enum.Parse(typeof(GleichstufigeIntervalleCent), currentExercise.intervall);    
         }
         else {
             _exerCounter++;

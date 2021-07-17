@@ -2,19 +2,19 @@ using System;
 using static DataStructures.GleichstufigFreq;
 
 namespace DataStructures {
-    public enum ReineIntervalleCent {
+    public enum GleichstufigeIntervalleCent {
         PRIME = 0,
-        KLEINE_SEKUNDE = 112,
-        GROßE_SEKUNDE = 204,
-        KLEINE_TERZ = 316,
-        GROßE_TERZ = 386,
-        QUARTE = 498,
-        TRITONUS = 590,
-        QUINTE = 702,
-        KLEINE_SEXTE = 814,
-        GROßE_SEXTE = 884,
-        KLEINE_SEPTIME = 1018,
-        GROßE_SEPTIME = 1088,
+        KLEINE_SEKUNDE = 100,
+        GROßE_SEKUNDE = 200,
+        KLEINE_TERZ = 300,
+        GROßE_TERZ = 400,
+        QUARTE = 500,
+        TRITONUS = 600,
+        QUINTE = 700,
+        KLEINE_SEXTE = 800,
+        GROßE_SEXTE = 900,
+        KLEINE_SEPTIME = 1000,
+        GROßE_SEPTIME = 1100,
         OKTAVE = 1200
     }
 

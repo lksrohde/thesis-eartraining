@@ -22,7 +22,9 @@ public class MainMenu : MonoBehaviour {
     public void StartModule() {
         SceneHandler.ChangeScene("IntervallModule");
     }
-
+    public void StartTheory() {
+        SceneHandler.ChangeScene("TheoryBook");
+    }
     public void EndGame() {
         Application.Quit();
     }

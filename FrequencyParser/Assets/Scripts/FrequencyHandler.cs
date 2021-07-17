@@ -23,7 +23,7 @@ public class FrequencyHandler : MonoBehaviour {
 
     void Start() {
         Debug.Log(_spectrum.Length);
-        Debug.Log(frequencyReader.SampleRate);
+        Debug.Log(FrequencyReader.SampleRate);
         
         noiseFilter = SceneHandler.NoiseFilter;
         overtoneThresh = SceneHandler.ToneThresh;
@@ -33,7 +33,7 @@ public class FrequencyHandler : MonoBehaviour {
         // Sopran singt bis zu c6 ca. 1100hz -> 400 samples reichen bei einem sampleCoefficient von ca. 2.69
         // 400 * 2.69 = 1076hz
 
-        _sampleCoeficient = (float) frequencyReader.SampleRate / 2 / _spectrum.Length;
+        _sampleCoeficient = (float) FrequencyReader.SampleRate / 2 / _spectrum.Length;
         _cutoffArray = (int) (maxReadableFrequency / _sampleCoeficient) + 1;
 
         _cutSpectrum = new float[_cutoffArray];
@@ -44,7 +44,7 @@ public class FrequencyHandler : MonoBehaviour {
     }
 
 
-    void FixedUpdate() {
+    void Update() {
         _hz = ComputeFrequency();
     }
 
@@ -149,12 +149,10 @@ public class FrequencyHandler : MonoBehaviour {
     }
     
     public float NoiseFilter {
-        get => noiseFilter;
         set => noiseFilter = value;
     }
 
     public float OvertoneThresh {
-        get => overtoneThresh;
         set => overtoneThresh = value;
     }
 }
