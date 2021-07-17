@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6aa135bd-0f97-4ccf-ae92-9f03272b502b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../FrequencyParser/Assets/Scripts/Interpolation.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FrequencyParser/Assets/Scripts/Interpolation.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/.idea/.idea.FrequencyParser/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/.idea/.idea.FrequencyParser/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/.idea/.idea.FrequencyParser/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/.idea/.idea.FrequencyParser/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/.idea/.idea.FrequencyParser/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/.idea/.idea.FrequencyParser/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Assembly-CSharp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Assets/Scenes/InfiniteTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Assets/Scenes/InfiniteTest.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Assets/Scripts/FrequencyHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Assets/Scripts/FrequencyHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Assets/Scripts/FrequencyReader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Assets/Scripts/FrequencyReader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Assets/Scripts/IntervallExerciseGen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Assets/Scripts/IntervallExerciseGen.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Assets/Scripts/Intervalls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Assets/Scripts/Intervalls.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/AnnotationManager" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Library/AnnotationManager" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/ArtifactDB" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Library/ArtifactDB" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/Artifacts/46/4600749939046895b0009b5c4fcba7d7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/Artifacts/89/892b1017ad3a2f9a1f85254f64723b15" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/Artifacts/8e/8e661c586a8394fa943670e747bfa774" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/Artifacts/e5/e5682513ca5b6770f6bbccd2a1e51301" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/Artifacts/fe/fef855975ebaa9de89b98fe318338db4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/CurrentLayout-default.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Library/CurrentLayout-default.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Library/CurrentMaximizeLayout.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/EditorInstance.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Library/EditorInstance.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/EditorOnlyScriptingSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Library/EditorOnlyScriptingSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/EditorUserBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Library/EditorUserBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/LastSceneManagerSetup.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Library/LastSceneManagerSetup.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/ProtocolInstance.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Library/ProtocolInstance.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/SceneVisibilityState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Library/SceneVisibilityState.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/Assembly-CSharp.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/Assembly-CSharp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/Assembly-CSharp.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/Unity.CollabProxy.Editor.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/Unity.CollabProxy.Editor.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/Unity.Rider.Editor.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/Unity.Rider.Editor.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/Unity.Rider.Editor.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/Unity.Rider.Editor.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/Unity.TextMeshPro.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/Unity.TextMeshPro.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/Unity.TextMeshPro.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/Unity.TextMeshPro.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/Unity.Timeline.Editor.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/Unity.Timeline.Editor.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/Unity.Timeline.Editor.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/Unity.Timeline.Editor.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/Unity.Timeline.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/Unity.Timeline.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/Unity.Timeline.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/Unity.Timeline.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/Unity.VSCode.Editor.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/Unity.VSCode.Editor.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/Unity.VSCode.Editor.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/Unity.VSCode.Editor.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/Unity.VisualStudio.Editor.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/Unity.VisualStudio.Editor.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/UnityEditor.TestRunner.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/UnityEditor.TestRunner.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/UnityEditor.TestRunner.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/UnityEditor.TestRunner.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/UnityEditor.UI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/UnityEditor.UI.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/UnityEditor.UI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/UnityEditor.UI.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/UnityEngine.TestRunner.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/UnityEngine.TestRunner.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/UnityEngine.TestRunner.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/UnityEngine.TestRunner.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/UnityEngine.UI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/UnityEngine.UI.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/UnityEngine.UI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Library/ScriptAssemblies/UnityEngine.UI.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/SourceAssetDB" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Library/SourceAssetDB" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/StateCache/MainStageHierarchy/49/494311acc7c9d83dc66f02d9856e512d.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Library/StateCache/MainStageHierarchy/49/494311acc7c9d83dc66f02d9856e512d.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/StateCache/SceneView/ad/ad726355e09409d19bf83e835e9cbdf7.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Library/StateCache/SceneView/ad/ad726355e09409d19bf83e835e9cbdf7.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/expandedItems" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Library/expandedItems" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/shadercompiler-UnityShaderCompiler1.log" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Library/shadercompiler-UnityShaderCompiler1.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/shadercompiler-UnityShaderCompiler2.log" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Library/shadercompiler-UnityShaderCompiler2.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Library/shadercompiler-UnityShaderCompiler3.log" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Library/shadercompiler-UnityShaderCompiler3.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/ProjectSettings/AudioManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/ProjectSettings/AudioManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/UnityTempFile-078adaa4680804d469ee2e3989e400cd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/UnityTempFile-0cc335dcae2f3416ab648ddc1f66624f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/UnityTempFile-1a3ef83c616444d0b9f922a06bc8674a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/UnityTempFile-1ef8a5240ee134e25a6da4bc16280818" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/UnityTempFile-201a486e76cb242769d894b472265fd6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/UnityTempFile-221f0d7c0493a46f98e3e08af6e9adf1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/UnityTempFile-35ede00063e4c4457b3a8ac385b32c60" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/UnityTempFile-43d55ca3d97c1420abc3ebef5c4e769c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/UnityTempFile-4a79f49fd9194467c87d616ccac414a9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/UnityTempFile-511a4f4a98b2f46d3a615ee76334ea08" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/UnityTempFile-52200989aa2fb49bcbad87f39a2b87a6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/UnityTempFile-55b610c15395e45228bbabf02c005331" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/UnityTempFile-56816c4e749744ae6b1cf04c2aa6ec3e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/UnityTempFile-58479057bf7a84f15bc810bbd3359cbe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/UnityTempFile-58d6f3ac350f84d80928d9a5dda9e505" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/UnityTempFile-5e75bf532d7484639b0011c1c7086fd1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/UnityTempFile-68010c7849f8441d2a877b06eaa828bc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/UnityTempFile-6ba8c7117884f429886b9e78df3df4f5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/UnityTempFile-6c3ebc4fad30f4c1d8222f82bf445c2c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/UnityTempFile-6ebf1791ba7f941629b13dcf1889e7fe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/UnityTempFile-705a656af983140afb88b718faf4e5e8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/UnityTempFile-7128f8dfbc0344569933d288aa8c29d8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/UnityTempFile-77a5d08191a034e7eb24abf9f2d3fb3d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/UnityTempFile-7821ea4989d1148758abb190b4c12dc4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/UnityTempFile-7fd2e76eb8fc14d08910101c8eb159b4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/UnityTempFile-84807fe9465f34c6cb17c42ed33e7bd4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/UnityTempFile-85b47f215c88a4df4ad0df946c5a4cb9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/UnityTempFile-87c906d5b57374132b77699d64796407" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/UnityTempFile-922cd4d4a5d7f40348e21cc86d6c5dcb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/UnityTempFile-92cadadd6a776426cb201581cc686340" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/UnityTempFile-94c9885c3aaff467284822c87ce868f8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/UnityTempFile-978f887818fac4aeaaa52e72a34641c9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/UnityTempFile-9856ae9f55cec4340bb42450480fde56" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/UnityTempFile-9ac9400c8290c4e91b0c67e55278399f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/UnityTempFile-a0f491847c6ed42a8b44cb027cd09842" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/UnityTempFile-a11fc85b0ec6441f98fb5563813c048f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/UnityTempFile-a356125f753c24efd9ac92fcc0faa5e5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/UnityTempFile-a4559cd5c3de64d37849615ecf88be9a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/UnityTempFile-b00e2cbac32a644418aeee1b4977687d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/UnityTempFile-b1c43259218be44999d71630afd5e0b1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/UnityTempFile-b583ff3f42c5041ca869d4b5a2650980" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/UnityTempFile-b61d6b454dc1d4811afd40ab985dfa2a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/UnityTempFile-b6ceac600984146a7843c6c273df5824" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/UnityTempFile-baa6f32cd579d4f43b05e836a21c4d25" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/UnityTempFile-c7e28bb164e434ff9bd7e46a133d275c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/UnityTempFile-d114e6d0725c14c17a5e652d412fa7cb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/UnityTempFile-f14ba5a37abde4bed9c91f8ba82c9e34" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/Temp/__Backupscenes/0.backup" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/Temp/__Backupscenes/0.backup" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrequencyParser/obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../FrequencyParser/obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bibliography.bib" beforeDir="false" afterPath="$PROJECT_DIR$/bibliography.bib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content.tex" beforeDir="false" afterPath="$PROJECT_DIR$/content.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/texput.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tudkom_students.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/tudkom_students.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tudkom_students.tex" beforeDir="false" afterPath="$PROJECT_DIR$/tudkom_students.tex" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/content.tex" />
+      </list>
+    </option>
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea/.idea.tudkom_students_v1.5.1.dir/.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1rnBMmgyyeqvMCvHOGiIOH2F3x6" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
+    <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="TexifyProjectConfigurable" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6aa135bd-0f97-4ccf-ae92-9f03272b502b" name="Default Changelist" comment="" />
+      <created>1619601927148</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1619601927148</updated>
+      <workItem from="1619601928658" duration="58000" />
+      <workItem from="1619602012543" duration="1526000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TexifyProjectSettings">
+    <option name="compilerCompatibility" value="LuaLaTeX" />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" suspend="NONE" type="DotNet Exception Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
