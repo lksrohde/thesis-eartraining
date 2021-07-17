@@ -1,0 +1,10 @@
+1. Abgabe wo und wie?
+2. Vortrag wann?
+ 2.1 Vorbereitung für Vortrag?
+
+3. Packages hinzufügen ok?
+
+4. Pseudocode im Text ok?
+ 4.1 Konzeption und Analyse gemischt ok?
+
+5. Wie Implementierung machen? Code ausschnitte einbauen oder im Anhang? Ganzer Code oder 	nur relevante Teile falls einbauen?
