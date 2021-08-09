@@ -9,6 +9,20 @@
 
 
 \chapter{Einleitung}
+\glqq 
+Study of music and
+its literature presupposes the ability to hear,
+read, and write the language. Lacking this ability one is
+comparatively helpless and dependent. This perfectly
+obvious truth is universally accepted without question
+in the study of every language excepting music. Teachers, capable otherwise, allow and encourage the serious
+study of music by students who do not comprehend what
+they hear. Ability to hear is the essence of music, the
+core of education in music is ear training
+''  \cite{spencer1947ear}
+
+Herbert S. Spencer beschreibt in einem Artikel von 1947 die Notwendigkeit der Gehörbildung um Musik in vollen Zügen wahrnehmen und ausüben zu können. Er setzt dabei das Hören von Musik mit dem Lernen von Sprachen gleich, wobei er feststellt, dass einzig in der Lehre der Musik kaum Wert auf das Hören dieser gelegt wird. Er sieht darin einen großen Verlust und beschreibt einen Musiker ohne ausgebildetes Gehör als vergleichsweise Hilflos und Abhängig. \\
+Heutzutage wird ein größerer Wert auf die Gehörbildung bei der professionellen Ausbildung gelegt, so ist diese ein fester Bestandteil des Musikstudiums. Entgegen dessen, wird jedoch auf Amateurebene nach wie vor kaum Wert auf die Gehörbildung gelegt. Ziel dieser Arbeit soll sein, die existierenden Trainingsprogramme zur Gehörbildung auf ihre wichtigsten Aspekte zu untersuchen und basierend auf den Ergebnissen der Analyse ein prototypisches Trainingsprogramm mithilfe von Unity3D zu entwickeln. Einige der Herausforderungen werden die echtzeit Erkennung und Verarbeitung der Töne sein, sowie ein ansprechendes User Interface für sowohl Amateurmusiker, wie auch (auszubildende) professionelle Musiker zu entwickeln. 
 
 %- Thema
 %- Warum relevant? Wie ist es einzuordnen? (Singen macht Spaß -> Problem: Viele haben keine ausgeprägte gehörbildung, Training für Lernende)
@@ -73,8 +87,8 @@ In dem geordneten Tonraum lässt sich jedem Ton genau eine Frequenz zuordnen, wo
 wir können daraus folgern, dass das Intervall der Töne, ein Frequenzverhältnis von $f_2 : f_1$ hat. Es wird außerdem in der Musik die Einheit Cent herangezogen um genauere Angaben zu verschieden hohen Tönen zu machen. Ein Cent ist definiert als 
 $1/1200$ Oktave. Betrachtet man den Raum der Intervalle und der Frequenzverhältnisse, so fällt auf, dass ein Homomorphismus zwischen diesen beiden Räumen gegeben ist. Addiert man zwei Intervalle im Intervallraum, so multipliziert man deren Frequenzverhältnisse bzw. Proportionen. \\
 Ein kurzes Beispiel soll diesen Zusammenhang verdeutlichen. Nehmen wir die kleine Terz $i_1 =  316$ Cent und die Quinte $i_2 =  701$ Cent und ihre dazugehörigen Frequenzverhältnisse $p_1 = 6/5$ und $p_2 = 3/2$ als gegeben an.
-$$    i = i_1 + i_2 = 1017  $$ (kleine Septime)
-$$    p = p_1 * p_2 = 9/5   $$ (kleine Septime)
+$$    i = i_1 + i_2 = 1017  $$
+$$    p = p_1 * p_2 = 9/5   $$
 $$   => 1200 * \log_2{9/5} \approx 1017     $$
 \\
 Es gibt nun verschiedene Verhältnisse welche verschiedene sogenannte Stimmungen bilden. Zu den bekanntesten Stimmungen zählen die reine Stimmung, die pythagoreische Stimmung und die gleichstufige Stimmung.
@@ -84,7 +98,8 @@ ungereimtheiten auf, sodass bspw. das fis einige Cent höher lag als das ges. Di
 pythagoreische Komma aufgelöst wird. Die reine Stimmung basiert, entgegen der anderen beiden Stimmungen, auf der natürlich auftretenden harmonischen Obertöne (\ref{sec:Oberton}) eines Tons. Bei der reinen Stimmung treten noch mehr Probleme mit der Bestimmung der Ganz und Halbtonschritte auf. Es ergeben sich aus der Definition der reinen Stimmung zwei verschiedene Frequenzverhältnisse für einen Ganzton. \cite{abcmusik}
 
 \section{Serious Games}
-Serious Games sind digitale Spiele, welche nicht nur unterhalten sollen, sondern auch ein weiteres Ziel verfolgen. Dieses Ziel nennt man auch das Characterizing Goal. Dabei ist es wichtig, dass Serious Games dieses zusätzliche Ziel umsetzen wollen, ohne dabei den Spielspaß oder die generelle Spielerfahrung einzuschränken. Es kann sich dabei um ein Lernspiel handeln, wie etwa \glqq Coding Pirates'' \cite{coding_game}, oder ein Spiel welches zu Bewegung anregt, wie \glqq Pokemon Go''\cite{althoff2016influence} oder die \glqq Moto Tiles'' \cite{liu2018playful}. Um Serious Games einheitlich klassifizieren zu können, wurde das sogenannte \glqq Serious Games Metadata Format'' entwickelt \cite{gobel2011makes}. Dieses Format hält neben allgemeinen Informationen über das Spiel auch genauere Angaben zu dem characterizing Goal und
+Serious Games sind digitale Spiele, welche nicht nur unterhalten sollen, sondern auch ein weiteres Ziel verfolgen. Dies wird gemacht, um eine Brücke zwischen Bildung und der Vermittlung von neuem Wissen und Unterhaltung zu schlagen. Dieses Ziel wird auch das Characterizing Goal genannt. Dabei ist es wichtig, dass Serious Games dieses zusätzliche Ziel umsetzen wollen, ohne dabei den Spielspaß oder die generelle Spielerfahrung einzuschränken. Die Spiele sollen weiterhin das Hauptziel der Unterhaltung verfolgen. Einige prominente Beispiele sind Spiele, wie etwa \glqq Coding Pirates'' \cite{coding_game}, welches neues Wissen vermitteln möchte, oder ein Spiel welches zur Bewegung anregen möchte, wie etwa \glqq Pokemon Go''\cite{althoff2016influence} oder die \glqq Moto Tiles'' \cite{liu2018playful}. Um Serious Games einheitlich klassifizieren zu können, wurde das sogenannte \glqq Serious Games Metadata Format'' entwickelt. Dieses Format ist aufgebaut aus mehreren Stufen. Die erste Ebene (Core), enthält allgemeine Informationen über das Spiel, welche Interessenten einen Überblick über die Qualität, Innovationen und Anwendungen des Spiel geben sollen. Die zweite Ebene (Detailed) dient Kritikern und Experten als Grundlage der Bewertung eines Serious Games. Sie beinhaltet daher Punkte wie etwa Informationen zur User Experience und einem Fragebogen zur generellen Bewertung. Auf der dritten Ebene (Extension) wird schließlich eingegangen auf spezifische Aspekte des Spiels eingegangen. So werden hier beispielsweise bei Exergames Trainingsprogramme und genaue Sportübungen bewertet \cite{gobel2011makes}. Eine Plattform um nach dem Metadaten Format Spiele zu filtern ist das Serious Games Information Center (SG-IC) \cite{sg_ic}. \\
+Im Gegensatz zu einem Serious Game steht das Konzept der Gamification. Bei der Gamification handelt es sich um den Ansatz spielerische Komponenten in eine Umgebung einzubinden, welche kein Spiel ist. Populäre Beispiele für Anwendungen, welche Gamification umsetzen, sind \glqq Duolingo'' \cite{duolingo}. Spielerische Elemente können ein Highscore System mit online Leaderboard sein oder die Möglichkeit Trophäen zu sammeln. Die Gamification Elemente sollen dem Nutzer meistens ein Gefühl von Fortschritt geben. 
 % TODO add Serious Games kapitel, ganz grob beschreiben
 
 \chapter{Analyse}
