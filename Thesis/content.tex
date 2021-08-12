@@ -9,6 +9,7 @@
 
 
 \chapter{Einleitung}
+\section{Motivation}
 \glqq 
 Study of music and
 its literature presupposes the ability to hear,
@@ -22,8 +23,12 @@ core of education in music is ear training
 ''  \cite{spencer1947ear}
 
 Herbert S. Spencer beschreibt in einem Artikel von 1947 die Notwendigkeit der Gehörbildung um Musik in vollen Zügen wahrnehmen und ausüben zu können. Er setzt dabei das Hören von Musik mit dem Lernen von Sprachen gleich, wobei er feststellt, dass einzig in der Lehre der Musik kaum Wert auf das Hören dieser gelegt wird. Er sieht darin einen großen Verlust und beschreibt einen Musiker ohne ausgebildetes Gehör als vergleichsweise Hilflos und Abhängig. \\
-Heutzutage wird ein größerer Wert auf die Gehörbildung bei der professionellen Ausbildung gelegt, so ist diese ein fester Bestandteil des Musikstudiums. Entgegen dessen, wird jedoch auf Amateurebene nach wie vor kaum Wert auf die Gehörbildung gelegt. Ziel dieser Arbeit soll sein, die existierenden Trainingsprogramme zur Gehörbildung auf ihre wichtigsten Aspekte zu untersuchen und basierend auf den Ergebnissen der Analyse ein prototypisches Trainingsprogramm mithilfe von Unity3D zu entwickeln. Einige der Herausforderungen werden die echtzeit Erkennung und Verarbeitung der Töne sein, sowie ein ansprechendes User Interface für sowohl Amateurmusiker, wie auch (auszubildende) professionelle Musiker zu entwickeln. 
+Obwohl Gehörbildung bereits seit langer Zeit von Musikern als wichtig für das Musizieren wahrgenommenen wird, findet die Förderung dieser heutzutage einzig im Studium der Musik statt. Weiterhin sitzt zum Üben der Gehörbildung häufig noch ein Lehrer an einem Klavier, welcher etwas vorspielt und die Schüler ihm zuhören und das Gehörte aufschreiben müssen. Der Unterricht der Gehörbildung ist dementsprechend nicht allgemein zugänglich für die breite Masse der Musiker und stark lokalisiert in die Umgebung des Seminarsaals. Es existieren bereits einige Programme, welche bei dem Üben der Gehörbildung der lernenden Person helfen, jedoch fehlen diesen häufig die Komponente gestellte Aufgaben mithilfe von Tonerkennung automatisch zu überprüfen.
+Ziel dieser Arbeit soll sein, die existierenden Trainingsprogramme zur Gehörbildung auf ihre wichtigsten Aspekte zu untersuchen und basierend auf den Ergebnissen der Analyse ein prototypisches Trainingsprogramm mithilfe von Unity3D zu entwickeln, welches die wesentlichen Aspekte der vorhandenen Software aufgreifen und verbessern soll. Das entwickelte Programm soll bestenfalls sowohl auszubildende Musiker im Studium unterstützen, als auch Amateurmusiker in der Fortbildung des Gehörs fördern. Unity bietet keinerlei Funktionen um von Haus aus eine echtzeit Tonverarbeitung zu implementieren, weshalb die Tonerkennung eine besondere Herausforderung darstellen wird. Weiterhin muss ein ansprechendes User Interface für sowohl Amateurmusiker, wie auch (auszubildende) professionelle Musiker entwickelt werden. 
 
+\section{Aufbau der Arbeit}
+Im nächsten Kapitel werden zunächst einige wichtige Definitionen zu den Oberthemen der Signalverarbeitung, Musiktheorie und zu Serious Games gegeben, welche für das restliche Verständnis der Arbeit wichtig sind. Daraufhin werden im dritten Kapitel zunächst die aktuell wichtigsten bereits vorhandenen Programme zur Gehörbildung vorgestellt und zu vorher definierten Gesichtspunkten untersucht und analysiert. Im zweiten Teil des Kapitels werden außerdem bekannte Methoden zur Tonerkennung und zur echtzeit Eingabe von Ton in Unity ebenfalls untersucht und analysiert. Basierend auf den Erkenntnissen des dritten Kapitels, wird im darauffolgenden Kapitel ein Trainingsprogramm zur Gehörbildung mit Unity konzeptioniert. Die Konzeption ist dabei aufgeteilt in 
+den Entwurf des Spiels aus der Sicht des Nutzer (user-centered design), des Entwurfs der Systemkomponenten, sowie dem Evaluationskonzept. Das fünfte Kapitel beschäftigt sich anschließend mit der Implementierung des Trainingsprogramms in Unity und geht im detail auf die implementierten Funktionen ein. Das darauffolgende Kapitel beleuchtet die Evaluationsschritte näher, wobei auf die Vorbereitung und die Durchführung der Evaluation eingegangen wird, sowie die Ergebnisse der Evaluation analysiert und ausgewertet werden. Im letzten Kapitel wird schließlich eine Zusammenfassung des Themas gezogen, sowie ein Ausblick auf mögliche erweiternde Funktionen, sowie weitere Anwendungsbereiche gegeben.
 %- Thema
 %- Warum relevant? Wie ist es einzuordnen? (Singen macht Spaß -> Problem: Viele haben keine ausgeprägte gehörbildung, Training für Lernende)
 %- Motivation: Viele haben Schwierigkeit Gehörbildung anständig zu lernen (fehlende Programme, schlechte Handhabung, festes Lernkit)
@@ -31,7 +36,7 @@ Heutzutage wird ein größerer Wert auf die Gehörbildung bei der professionelle
 %- techn. Problemstellung: "Realtime Soundverarbeitung unter UNity mit angemessener Fehlerquote / Intuitives Design der Notenausgabe/Platzierung auf das Notensystem"
 %Introkapitel
 %- Thema beschreiben 
-%- Problem stellung grob eingehen
+%- Problemstellung grob eingehen
 %-- facettenreiche und betrifft die folgenden gebiete
 %--- serious games, audio, Grundlagen..
 %y-- als nächstes schau ich das näher an -> rundown der arbeit geben
