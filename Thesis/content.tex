@@ -300,9 +300,13 @@ Bevor wir uns mit der eigentlichen Erkennung von Tönen beschäftigen können, m
 
 \subsection{Ansätze der Pitch Detection Algorithmen}
 Infrage kommende Pitch Detection Algorithmen lassen sich in zwei Klassen einteilen. Es gibt zum einen Algorithmen, welche versuchen den Grundton zu berechnen, indem Operationen auf dem Frequenzbereich ausgeführt werden. So kann beispielsweise der Grundton berechnet werden, indem man nach sich widerholenden Freqeunzmustern sucht und aus diesen auf den Grundton schließen kann. %\cite{TODO}
-Die andere Klasse versucht hingegen den Grundton aus dem Freqeunzspektrum zu berechnen. Wir wisse bereits, dass der Grundton innerhalb eines Spektrums die tiefste schwingende Freqeunz in diesem ist. Es gibt innerhalb dessen verschiedene Ansätze diese tiefste Frequenz zu berechnen, wie es etwa das sogenannte Cepstrum macht, welches zunächst das Spektrum berechnet, innerhalb diesem dann alle Werte logarithmiert und schließlich wieder die Umkehrfunktion der Spektrumsfunktion anwendet. Auf die Vorteile und Nachteile dieser Ansätze und weitere Klassifizierungen innerhalb dieser möchte ich nun eingehen. \\
+Die andere Klasse versucht hingegen den Grundton aus dem Freqeunzspektrum zu berechnen. Wir wisse bereits, dass der Grundton innerhalb eines Spektrums die tiefste schwingende Freqeunz in diesem ist. Es gibt innerhalb dessen verschiedene Ansätze diese tiefste Frequenz zu berechnen, wie es etwa das sogenannte Cepstrum macht, welches zunächst das Spektrum berechnet, innerhalb diesem dann alle Werte logarithmiert und schließlich wieder die Umkehrfunktion der Spektrumsfunktion anwendet. Auf die Vorteile und Nachteile dieser Ansätze und auf weitere Unterschiede innerhalb dieser möchte ich nun eingehen. \\
+Ich fange zunächst mit den Algorithmen an, welche nicht innerhalb des Frequenzspektrum arbeiten. Unter diesen Ansatz fallen Algorithmen und Ansätze wie etwa die \glqq zero-crossing rate'', \glqq average magnitude difference function (AMDF)'' oder die \glqq average squared mean difference function (ASMDF)'' und schließlich ein maximum likelihood classifier. Ich möchte einen kurzen Überblick über die Funktionsweisen dieser Algorithmen geben.
 
-
+\subsubsection*{Zero-crossing Rate (ZCR)}
+Die ZCR ist einer der einfachsten Techniken um die Grundfrequenz innerhalb eines Klangs zu berechnen. Es wird, wie der Name schon verrät, gezählt wie oft das Signal vom Positiven auf Null und weiter ins Negative fällt oder anders herum vom Negativen Raum auf Null und in den positiven Raum ansteigt. Man kann aus der Häufigkeit dieser crossings die Grundfreqeunz nun wie folgt berechnen. 
+$$ F_{Signal} = \frac{zcr * f_{Sample}}{2}$$
+In der 
 
 \subsection{Analyse der Ansätze zur echtzeit Audio Verarbeitung und Entwurf eines echtzeit Pitch Detection Algorithmus}
 
@@ -377,7 +381,7 @@ Es ist einfach von dem Index auf die Frequenz zu schließen, indem der Index mit
     \EndFunction
     \end{algorithmic}
 \end{algorithm}
-
+%TODO verschieben
 \subsubsection*{Berechnung der Laufzeitkomplexität des vorgestellten Algorithmus}
 Es gilt zu zeigen, dass der oben vorgestellte Pitch Detection Algorithmus effizient ist. Ich werde die Funktion \glqq HandleOvertones'' zunächst untersuchen, da diese von der Funktion \glqq ComputeFrequency'' aufgerufen wird. Man kann sehen, dass die Zeilen 25 und 26, sowie die Zeile 39 nur einmal pro Ablauf aufgerufen werden und daher vernachlässigbar sind. Sei n die Länge des Spektrums. Die Schleife wird im worst case Szenario $n$ mal und die Zeile 27 $n + 1$ durchlaufen. 
 $$3 * \mathcal{O}(1) + 7 * \mathcal{O}(1) * \mathcal{O}(n) + \mathcal{O}(1) = \mathcal{O}(n) $$
