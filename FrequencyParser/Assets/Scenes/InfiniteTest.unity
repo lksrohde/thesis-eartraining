@@ -3988,7 +3988,7 @@ GameObject:
   - component: {fileID: 1538085680}
   - component: {fileID: 1538085679}
   m_Layer: 0
-  m_Name: FrequencyListener
+  m_Name: FrequencyReader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4007,8 +4007,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playback: {fileID: 112744502}
-  micClip: {fileID: 0}
-  deviceName: 
 --- !u!4 &1538085680
 Transform:
   m_ObjectHideFlags: 0

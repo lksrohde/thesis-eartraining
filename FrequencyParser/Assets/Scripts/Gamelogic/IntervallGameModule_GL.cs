@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using DataStructures;
+using DatastructuresUtility;
 using UnityEngine;
 
 public class IntervallGameModule_GL : BaseGameLogic {

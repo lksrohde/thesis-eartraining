@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using DataStructures;
+using DatastructuresUtility;
 using UnityEngine;
 
 public class OnehotNote : MonoBehaviour {
@@ -9,12 +10,19 @@ public class OnehotNote : MonoBehaviour {
     private Sprite _notenKopf;
     private NoteSystemHandler _systemHandler;
     private BoxCollider _collider;
+    
     private bool _stayOn;
+    public bool StayOff { get; set; }
+    public bool EnableClickIn { get; set; }
+    public bool IsVisible { get; private set; }
+    
     private GleichstufigFreq _toneVal;
     private GleichstufigFreq _halfToneLowerVal;
     private GleichstufigFreq _halfToneUpperVal;
+    
     private Vector2 _standSize;
     private Vector2 _collSize;
+    
     public GameObject[] balken;
     private GameUI _uiHandler;
     
@@ -105,13 +113,7 @@ public class OnehotNote : MonoBehaviour {
         _notenKopf = _systemHandler.notenKopfFlat;
         _standSize = new Vector2(_collSize.y * 3.5f, _collSize.y * 2);
     }
-
-    public bool StayOff { get; set; }
-
-    public bool EnableClickIn { get; set; }
-
-    public bool IsVisible { get; private set; }
-
+    
     public GleichstufigFreq ToneVal {
         get => _toneVal;
         set => _toneVal = value;

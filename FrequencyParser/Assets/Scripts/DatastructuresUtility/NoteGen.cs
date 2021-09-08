@@ -14,7 +14,7 @@ public class NoteGen : MonoBehaviour {
         _sampleFreq = 44100;
     }
 
-    public AudioClip GetSinNoteFromFreq(float freq) {
+    private AudioClip GetSinNoteFromFreq(float freq) {
         float[] samples = new float[_sampleFreq];
         freq = _freqUtil.GetFrequency(freq);
 

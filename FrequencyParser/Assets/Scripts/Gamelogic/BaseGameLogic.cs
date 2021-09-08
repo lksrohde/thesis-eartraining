@@ -1,5 +1,7 @@
 using System;
+using DatastructuresUtility;
 using UnityEngine;
+using Random = System.Random;
 
 namespace DataStructures {
     public class BaseGameLogic : MonoBehaviour {
@@ -120,7 +122,7 @@ namespace DataStructures {
         }
 
         public void RefreshInputVals() {
-            grundton = _uiHandler.GetStaticGrundton();
+            GetGrundton();
             _generator.PlayFreq(grundton);
             _currentExer =
                 _freqUtil.GenExerIntervall(_freqUtil.GetFrequency(grundton), intervall, _uiHandler.AscDesc);

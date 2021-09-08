@@ -1,5 +1,6 @@
 using System;
 using DataStructures;
+using DatastructuresUtility;
 
 public class FrequencyUtil {
     private Random _random = new Random();

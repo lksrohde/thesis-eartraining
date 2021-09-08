@@ -1,5 +1,6 @@
 using System;
 using DataStructures;
+using DatastructuresUtility;
 using UnityEngine;
 
 public class InputHandler : MonoBehaviour{
@@ -30,10 +31,9 @@ public class InputHandler : MonoBehaviour{
         _frequencyHandler = FindObjectOfType<FrequencyHandler>();
         _systemHandler = FindObjectOfType<NoteSystemHandler>();
         _uiHandler = FindObjectOfType<GameUI>();
-        FixedUpdate();
     }
 
-    private void FixedUpdate() {
+    private void Update() {
         _currentFreq = _frequencyHandler.GetHz();
         _currentNoteMic = _frequencyHandler.GetNote();
         

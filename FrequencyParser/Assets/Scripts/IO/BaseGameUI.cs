@@ -1,7 +1,9 @@
 using System;
+using DataStructures;
+using DatastructuresUtility;
 using UnityEngine;
 
-namespace DataStructures {
+namespace IO {
     public class BaseGameUI : MonoBehaviour {
         protected bool _toggledGrundton;
         protected bool _toggledSinging;

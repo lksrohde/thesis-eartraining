@@ -1,7 +1,7 @@
 using System;
-using static DataStructures.GleichstufigFreq;
+using static DatastructuresUtility.GleichstufigFreq;
 
-namespace DataStructures {
+namespace DatastructuresUtility {
     public enum GleichstufigeIntervalleCent {
         PRIME = 0,
         KLEINE_SEKUNDE = 100,
