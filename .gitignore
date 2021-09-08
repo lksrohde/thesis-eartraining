@@ -2,3 +2,12 @@ FrequencyParser/Library/*
 
 Builds/*
 Dokumente/*
+FrequencyParser/.idea/
+
+FrequencyParser/Library/
+
+FrequencyParser/Temp/
+
+FrequencyParser/obj/
+
+FrequencyParser/Assembly-CSharp.csproj
